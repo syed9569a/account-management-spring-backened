@@ -8,16 +8,41 @@ public class AccountDB {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String firstName;
-    private String lastName;
-    private int accountNum;
+    private String first_name;
+    private String last_name;
+    private int account_number;
 
     public AccountDB(){}
 
-    public AccountDB(String firstName, String lastName, int accountNum) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.accountNum = accountNum;
+    public AccountDB(String first_name, String last_name, int account_number) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.account_number = account_number;
+    }
+
+    public String getFirst_name() {
+        return first_name;
+
+    }
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public int getAccount_number() {
+        return account_number;
+    }
+
+    public void setAccount_number(int account_number) {
+        this.account_number = account_number;
     }
 
     public Long getId() {
@@ -28,37 +53,13 @@ public class AccountDB {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getAccountNum() {
-        return accountNum;
-    }
-
-    public void setAccountNum(int accountNum) {
-        this.accountNum = accountNum;
-    }
-
     @Override
     public String toString() {
         return "AccountDB{" +
                 "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", accountNum=" + accountNum +
+                ", first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", account_number=" + account_number +
                 '}';
     }
 }

@@ -9,10 +9,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/account")
+@CrossOrigin(origins = "http://localhost:8081")
 public class AccountDBController {
 
-    final
-    AccountDBRepository accountDBRepository;
+    private final AccountDBRepository accountDBRepository;
 
     @Autowired
     public AccountDBController(AccountDBRepository accountDBRepository) {
@@ -37,17 +37,12 @@ public class AccountDBController {
     @RequestMapping(value = "/find-by-id/{id}", method = RequestMethod.GET)
     public AccountDB findById(@PathVariable Long id){
         return accountDBRepository.findById(id).get();
-//        AccountDB existingAccount = findById(id);
-//        if (accountDBRepository.existsById(id)){
-//            return existingAccount;
-//        }else{
-//            return null;
-//        }
     }
 
     @RequestMapping(value = "/find-by-name/{name}", method = RequestMethod.GET)
     public List<AccountDB> findByName(@PathVariable String name){
         return accountDBRepository.findByName(name);
     }
+
 
 }
